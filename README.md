@@ -20,5 +20,7 @@ Central login: http://localhost:8000/login
 Tenant login: http://{subdomain}.localhost:8000/login (example: http://test123.localhost:8000/login)
 
 
+In the tenant dashbaord you can create multiple users and assign their roles so the routes will be guarded by their role through spattie role-permission 
+
 Thank you
 
