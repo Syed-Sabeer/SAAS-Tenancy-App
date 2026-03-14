@@ -116,6 +116,9 @@ class TenancyServiceProvider extends ServiceProvider
     protected function makeTenancyMiddlewareHighestPriority()
     {
         $tenancyMiddleware = [
+            // Custom wrapper used by this app's tenant routes.
+            \App\Http\Middleware\InitializeTenantByDomain::class,
+
             // Even higher priority than the initialization middleware
             Middleware\PreventAccessFromCentralDomains::class,
 
