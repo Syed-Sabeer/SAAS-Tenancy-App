@@ -40,6 +40,7 @@ class RegisterTenantJob implements ShouldQueue
         }
 
         $tenant->setInternal('db_name', $this->databaseName);
+        $tenant->save();
 
         $company = Company::findOrFail($this->companyId);
         $company->update(['tenant_id' => $tenant->id]);

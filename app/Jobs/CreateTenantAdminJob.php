@@ -17,7 +17,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 use RuntimeException;
-use Stancl\Tenancy\Database\Models\Tenant;
+use App\Models\Central\Tenant;
 
 class CreateTenantAdminJob implements ShouldQueue
 {

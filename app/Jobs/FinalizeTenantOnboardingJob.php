@@ -15,7 +15,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
-use Stancl\Tenancy\Database\Models\Tenant;
+use App\Models\Central\Tenant;
 
 class FinalizeTenantOnboardingJob implements ShouldQueue
 {
