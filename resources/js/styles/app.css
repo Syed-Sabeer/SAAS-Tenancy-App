@@ -1,0 +1,35 @@
+:root {
+    --brand-ink: #0d1b2a;
+    --brand-sky: #1b6ca8;
+    --brand-sea: #2a9d8f;
+    --brand-sand: #f4a261;
+    --brand-shell: #f8f9fa;
+}
+
+body {
+    background: radial-gradient(circle at 10% 10%, #e8f7ff, #f8fafc 40%, #fef7ef 100%);
+    min-height: 100vh;
+}
+
+.app-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1rem 2rem;
+}
+
+.app-gradient {
+    background: linear-gradient(120deg, var(--brand-ink), var(--brand-sky), var(--brand-sea));
+}
+
+.card {
+    border-radius: 14px;
+}
+
+.page-title {
+    font-weight: 800;
+    color: var(--brand-ink);
+}
+
+.page-subtitle {
+    color: #4d5f73;
+}
