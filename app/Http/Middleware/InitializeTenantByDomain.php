@@ -4,13 +4,13 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 class InitializeTenantByDomain
 {
     /**
-     * @var \Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain
+    * @var \Stancl\Tenancy\Middleware\InitializeTenancyByDomain
      */
     protected $initializeTenancy;
 
@@ -20,7 +20,7 @@ class InitializeTenantByDomain
     protected $preventCentralAccess;
 
     public function __construct(
-        InitializeTenancyByDomainOrSubdomain $initializeTenancy,
+        InitializeTenancyByDomain $initializeTenancy,
         PreventAccessFromCentralDomains $preventCentralAccess
     ) {
         $this->initializeTenancy = $initializeTenancy;
