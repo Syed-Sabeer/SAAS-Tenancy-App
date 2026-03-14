@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
@@ -16,7 +17,7 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            if (function_exists('tenant') && tenant()) {
+            if ($this->isTenantHost($request)) {
                 return '/login';
             }
 
@@ -26,5 +27,13 @@ class Authenticate extends Middleware
 
             return '/login';
         }
+    }
+
+    protected function isTenantHost(Request $request): bool
+    {
+        $host = $request->getHost();
+        $centralDomains = config('tenancy.central_domains', []);
+
+        return ! in_array($host, $centralDomains, true);
     }
 }
