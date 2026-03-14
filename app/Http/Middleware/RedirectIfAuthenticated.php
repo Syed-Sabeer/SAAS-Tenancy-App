@@ -29,7 +29,7 @@ class RedirectIfAuthenticated
                 }
 
                 if ($guard === 'tenant' && Route::has('tenant.dashboard')) {
-                    return redirect()->route('tenant.dashboard');
+                    return redirect('/dashboard');
                 }
 
                 return redirect(RouteServiceProvider::HOME);

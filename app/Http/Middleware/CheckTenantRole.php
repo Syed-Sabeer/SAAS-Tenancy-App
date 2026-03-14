@@ -25,7 +25,7 @@ class CheckTenantRole
                 ], 401);
             }
 
-            return redirect()->route('tenant.login');
+            return redirect('/login');
         }
 
         if (empty($roles)) {

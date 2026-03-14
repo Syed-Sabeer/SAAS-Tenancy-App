@@ -19,7 +19,7 @@ class LogoutController extends Controller
         $request->session()->regenerateToken();
 
         return $this->success('Tenant user logged out successfully.', [
-            'redirect_to' => route('tenant.login'),
+            'redirect_to' => '/login',
         ]);
     }
 }

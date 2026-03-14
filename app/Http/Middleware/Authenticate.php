@@ -17,7 +17,7 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             if (function_exists('tenant') && tenant()) {
-                return route('tenant.login');
+                return '/login';
             }
 
             if (Route::has('enterprise.login')) {

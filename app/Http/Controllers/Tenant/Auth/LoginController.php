@@ -43,7 +43,7 @@ class LoginController extends Controller
         $user->update(['last_login_at' => now()]);
 
         return $this->success('Tenant user logged in successfully.', [
-            'redirect_to' => route('tenant.dashboard'),
+            'redirect_to' => '/dashboard',
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
